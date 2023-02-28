@@ -31,6 +31,25 @@ int main() {
       fclose(fp);
     }
 
+    // retrives an exiisting file when user enters "retrieve"
+    else if (strcmp(command, "retrieve") == 0) {
+      printf("Enter the name of the file to retrieve: ");
+      scanf("%s", filename);
+
+      fp = fopen(filename, "r");
+      if (fp == NULL) {
+        printf("Error: could not open file.\n");
+        continue;
+      }
+
+      printf("File contents:\n");
+      while (fgets(text, sizeof(text), fp) != NULL) {
+        printf("%s", text);
+      }
+
+      fclose(fp);
+    }
+
 
    }
 

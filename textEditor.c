@@ -82,7 +82,14 @@ int main() {
       }
     }
 
+    // exits the program when user enters "exit"
+    else if (strcmp(command, "exit") == 0) {
+      break;
+    }
 
+    else {
+      printf("Invalid command.\n");
+    }
 
    }
 

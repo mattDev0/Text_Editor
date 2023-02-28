@@ -51,6 +51,25 @@ int main() {
     }
 
 
+    // updates an existing file when user enters "update"
+    else if (strcmp(command, "update") == 0) {
+      printf("Enter the name of the file to update: ");
+      scanf("%s", filename);
+
+      fp = fopen(filename, "a");
+      if (fp == NULL) {
+        printf("Error: could not open file.\n");
+        continue;
+      }
+
+      printf("Enter text to append to file (max 100 characters):\n");
+      scanf(" %[^\n]s", text);
+      fputs(text, fp);
+
+      fclose(fp);
+    }
+
+
    }
 
   return 0;

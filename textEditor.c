@@ -69,6 +69,20 @@ int main() {
       fclose(fp);
     }
 
+    // deletes an existing file when user enters "delete"
+    else if (strcmp(command, "delete") == 0) {
+      printf("Enter the name of the file to delete: ");
+      scanf("%s", filename);
+
+      if (remove(filename) == 0) {
+        printf("File deleted successfully.\n");
+      }
+      else {
+        printf("Error: could not delete file.\n");
+      }
+    }
+
+
 
    }
 
